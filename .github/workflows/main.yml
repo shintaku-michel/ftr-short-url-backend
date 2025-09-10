@@ -1,1 +1,16 @@
+name: ftr-short-url pipe
 
+on: 
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        #github.com/marketplace/actions
+        #github.com/actions/checkout
+        user: actions/checkout@v4
