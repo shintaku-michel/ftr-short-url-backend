@@ -11,6 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        #github.com/marketplace/actions
-        #github.com/actions/checkout
-        user: actions/checkout@v4
+        uses: actions/checkout@v4
