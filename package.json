@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/infra/http/server.ts"
+    "dev": "tsx watch --env-file .env src/infra/http/server.ts",
+    "build": "tsup src --format esm",
+    "start": "node dist/server.mjs"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
     "@biomejs/biome": "^2.2.3",
     "@types/node": "^24.3.1",
     "tsx": "^4.20.5",
+    "tsup": "^8.5.0",
     "typescript": "^5.9.2"
   },
   "dependencies": {
