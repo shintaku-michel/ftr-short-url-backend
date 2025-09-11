@@ -20,17 +20,8 @@ jobs:
         with:
           node-version: 22.16.0
 
-      - name: Install pnpm
-        id: install-pnpm
-        uses: npm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Update dependencies and install
-        id: install-dependencies
-        run: |
-          pnpm update strip-ansi
-          pnpm install
+      - name: NPM install
+        uses: jaid/action-npm-install@v1.2.1
 
       - name: Configure AWS Credentials
         id: configure-aws-credentials
