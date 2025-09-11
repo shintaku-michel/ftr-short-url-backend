@@ -22,13 +22,14 @@ jobs:
 
       - name: Install pnpm
         id: install-pnpm
-        uses: pnpm/action-setup@v4
+        uses: npm/action-setup@v2
         with:
-          version: 10.9.0
+          version: 8
 
-      - name: Install dependencies
+      - name: Update dependencies and install
         id: install-dependencies
         run: |
+          pnpm update strip-ansi
           pnpm install
 
       - name: Configure AWS Credentials
@@ -56,7 +57,7 @@ jobs:
           push: true
           tags: |
             ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:${{ steps.generate_tag.outputs.sha }}
-            
+
 
       #- name: Build and push the image to AWS ECR
       # id: build-push-image
