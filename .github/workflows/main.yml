@@ -1,4 +1,4 @@
-name: ftr-short-url pipe
+name: ftr-short-url pipe AWS ECR
 
 on: 
   push:
